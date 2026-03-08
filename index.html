@@ -2597,8 +2597,50 @@ let currentPkg = null;
 let currentTab = 'tutorial';
 
 /* ============================================
-   INIT
+   INIT + SPA BACK BUTTON
    ============================================ */
+window.addEventListener('popstate', (e) => {
+  if (e.state?.page === 'package') {
+    _renderPackage(e.state.id);
+  } else {
+    _renderHome();
+  }
+});
+
+function _renderPackage(id) {
+  currentPkg = PACKAGES.find(p => p.id === id);
+  if (!currentPkg) return;
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  if (window.innerWidth <= 900 && sidebarOpen) {
+    sidebarOpen = false;
+    document.getElementById('sidebar').classList.remove('mobile-open');
+    document.getElementById('sidebar-overlay').classList.remove('active');
+  }
+  document.getElementById('breadcrumb-name').textContent = currentPkg.name;
+  document.getElementById('detail-icon').textContent = currentPkg.icon;
+  document.getElementById('detail-icon').className = `detail-icon ${currentPkg.theme}`;
+  document.getElementById('detail-icon').style.cssText = `width:54px;height:54px;border-radius:14px;font-size:1.6rem;display:flex;align-items:center;justify-content:center;`;
+  document.getElementById('detail-h1').textContent = currentPkg.name;
+  document.getElementById('detail-tagline').textContent = currentPkg.desc;
+  document.getElementById('qa-count-badge').textContent = currentPkg.qa?.length || 0;
+  buildTutorial(currentPkg);
+  buildInterview(currentPkg);
+  document.getElementById('home-view').style.display = 'none';
+  document.getElementById('pkg-detail').style.display = 'block';
+  switchTab('tutorial', document.querySelector('.tab-btn'));
+  window.scrollTo(0, 0);
+}
+
+function _renderHome() {
+  document.getElementById('home-view').style.display = 'block';
+  document.getElementById('pkg-detail').style.display = 'none';
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  currentPkg = null;
+  window.scrollTo(0, 0);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 900) {
     sidebarOpen = false;
@@ -2606,14 +2648,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   buildSidebar();
   buildGrid();
+  // Handle direct URL with hash (e.g. site.com/#sanctum)
   const hash = window.location.hash.slice(1);
   if (hash && PACKAGES.find(p => p.id === hash)) {
     history.replaceState({ page: 'package', id: hash }, '', '#' + hash);
-    _openPkgInternal(hash);
+    _renderPackage(hash);
   } else {
     history.replaceState({ page: 'home' }, '', window.location.href);
   }
-
   // animate progress bars after short delay
   setTimeout(() => {
     document.querySelectorAll('.pkg-progress-fill').forEach(el => {
@@ -2735,6 +2777,7 @@ function buildGrid() {
 function openPackage(id) {
   currentPkg = PACKAGES.find(p => p.id === id);
   if (!currentPkg) return;
+  history.pushState({ page: 'package', id: id }, '', '#' + id);
 
   // sidebar active
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
@@ -2777,6 +2820,7 @@ function showHome() {
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   currentPkg = null;
   window.scrollTo(0, 0);
+  history.pushState({ page: 'home' }, '', window.location.pathname + window.location.search);
 }
 
 /* ============================================
