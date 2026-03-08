@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laravel Hub — مرجع الـ Packages الشامل</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="prog-bar"></div>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">L</div>
+    <div class="logo-text">Laravel Hub <span>مرجع الـ Packages الشامل</span></div>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="sidebar-search" placeholder="ابحث في الـ Packages..." oninput="filterSidebar()">
+  </div>
+  <div class="sidebar-nav" id="sidebar-nav">
+<div class="nav-section">Authentication</div>
+    <div class="nav-item" id="nav-sanctum" onclick="window.location.href='sanctum.html'">
+      <span class="ni-icon">🔐</span>
+      <span>Laravel Sanctum</span>
+    </div>
+    <div class="nav-item" id="nav-passport" onclick="window.location.href='passport.html'">
+      <span class="ni-icon">🛂</span>
+      <span>Laravel Passport</span>
+    </div>
+    <div class="nav-item" id="nav-socialite" onclick="window.location.href='socialite.html'">
+      <span class="ni-icon">🌐</span>
+      <span>Laravel Socialite</span>
+    </div>
+    <div class="nav-item" id="nav-fortify" onclick="window.location.href='fortify.html'">
+      <span class="ni-icon">🏰</span>
+      <span>Laravel Fortify</span>
+    </div>
+<div class="nav-section">Billing</div>
+    <div class="nav-item" id="nav-cashier" onclick="window.location.href='cashier.html'">
+      <span class="ni-icon">💳</span>
+      <span>Laravel Cashier</span>
+    </div>
+<div class="nav-section">Queues</div>
+    <div class="nav-item" id="nav-horizon" onclick="window.location.href='horizon.html'">
+      <span class="ni-icon">🔭</span>
+      <span>Laravel Horizon</span>
+    </div>
+<div class="nav-section">Debugging</div>
+    <div class="nav-item" id="nav-telescope" onclick="window.location.href='telescope.html'">
+      <span class="ni-icon">🔬</span>
+      <span>Laravel Telescope</span>
+    </div>
+<div class="nav-section">Search</div>
+    <div class="nav-item" id="nav-scout" onclick="window.location.href='scout.html'">
+      <span class="ni-icon">🔍</span>
+      <span>Laravel Scout</span>
+    </div>
+<div class="nav-section">Admin Panel</div>
+    <div class="nav-item" id="nav-filament" onclick="window.location.href='filament.html'">
+      <span class="ni-icon">🔶</span>
+      <span>Laravel Filament</span>
+    </div>
+<div class="nav-section">Monitoring</div>
+    <div class="nav-item" id="nav-pulse" onclick="window.location.href='pulse.html'">
+      <span class="ni-icon">💓</span>
+      <span>Laravel Pulse</span>
+    </div>
+<div class="nav-section">WebSockets</div>
+    <div class="nav-item" id="nav-reverb" onclick="window.location.href='reverb.html'">
+      <span class="ni-icon">📡</span>
+      <span>Laravel Reverb</span>
+    </div>
+<div class="nav-section">Performance</div>
+    <div class="nav-item" id="nav-octane" onclick="window.location.href='octane.html'">
+      <span class="ni-icon">🚀</span>
+      <span>Laravel Octane</span>
+    </div>
+<div class="nav-section">Feature Flags</div>
+    <div class="nav-item" id="nav-pennant" onclick="window.location.href='pennant.html'">
+      <span class="ni-icon">🚩</span>
+      <span>Laravel Pennant</span>
+    </div>
+<div class="nav-section">Testing</div>
+    <div class="nav-item" id="nav-dusk" onclick="window.location.href='dusk.html'">
+      <span class="ni-icon">🌙</span>
+      <span>Laravel Dusk</span>
+    </div>
+<div class="nav-section">Development</div>
+    <div class="nav-item" id="nav-sail" onclick="window.location.href='sail.html'">
+      <span class="ni-icon">⛵</span>
+      <span>Laravel Sail</span>
+    </div>
+    <div class="nav-item" id="nav-valet" onclick="window.location.href='valet.html'">
+      <span class="ni-icon">🌿</span>
+      <span>Laravel Valet</span>
+    </div>
+<div class="nav-section">Code Quality</div>
+    <div class="nav-item" id="nav-pint" onclick="window.location.href='pint.html'">
+      <span class="ni-icon">✨</span>
+      <span>Laravel Pint</span>
+    </div>
+<div class="nav-section">Forms & Validation</div>
+    <div class="nav-item" id="nav-precognition" onclick="window.location.href='precognition.html'">
+      <span class="ni-icon">🔮</span>
+      <span>Laravel Precognition</span>
+    </div>
+<div class="nav-section">Deployment</div>
+    <div class="nav-item" id="nav-envoy" onclick="window.location.href='envoy.html'">
+      <span class="ni-icon">📮</span>
+      <span>Laravel Envoy</span>
+    </div>
+<div class="nav-section">Routing</div>
+    <div class="nav-item" id="nav-folio" onclick="window.location.href='folio.html'">
+      <span class="ni-icon">📁</span>
+      <span>Laravel Folio</span>
+    </div>
+<div class="nav-section">Starter Kits</div>
+    <div class="nav-item" id="nav-breeze" onclick="window.location.href='breeze.html'">
+      <span class="ni-icon">🌬️</span>
+      <span>Laravel Breeze</span>
+    </div>
+    <div class="nav-item" id="nav-jetstream" onclick="window.location.href='jetstream.html'">
+      <span class="ni-icon">🚀</span>
+      <span>Laravel Jetstream</span>
+    </div>
+
+  </div>
+</nav>
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+<button id="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+<div id="main">
+  <div id="home-view">
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div style="position:absolute;width:3px;height:3px;background:#00ff87;border-radius:50%;top:20%;left:15%;opacity:.4;animation:float1 6s ease-in-out infinite;pointer-events:none;"></div>
+      <div style="position:absolute;width:2px;height:2px;background:#00d4ff;border-radius:50%;top:60%;left:40%;opacity:.3;animation:float2 8s ease-in-out infinite;pointer-events:none;"></div>
+      <div style="position:absolute;width:4px;height:4px;background:#f59e0b;border-radius:50%;top:30%;right:20%;opacity:.3;animation:float1 7s ease-in-out infinite 1s;pointer-events:none;"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">🚀 Laravel Official Packages</div>
+        <h1>تعلم كل <span class="accent">Packages</span><br>لارافيل <span class="accent2">في مكان واحد</span></h1>
+        <p class="hero-desc">منصة شاملة لدراسة كل الـ packages الرسمية من Laravel — tutorial كامل + أسئلة انترفيو حقيقية لكل package. اختار الـ Package وابدأ!</p>
+        <div class="hero-stats">
+          <div class="stat-item"><div class="stat-num" id="pkg-count">22</div><div class="stat-lbl">Package</div></div>
+          <div class="stat-item"><div class="stat-num" style="color:var(--neon2)">450+</div><div class="stat-lbl">سؤال انترفيو</div></div>
+          <div class="stat-item"><div class="stat-num" style="color:var(--amber)">∞</div><div class="stat-lbl">أمثلة كود</div></div>
+        </div>
+      </div>
+    </div>
+    <div id="pkg-grid"></div>
+  </div>
+  <div id="pkg-detail" style="display:none"></div>
+</div>
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// All packages metadata for the index grid (lightweight)
+const PACKAGES = [
+  { id:'sanctum', name:'Laravel Sanctum', icon:'🔐', theme:'theme-green', subtitle:'laravel/sanctum', category:'Authentication', desc:'نظام مصادقة خفيف الوزن لـ SPAs وـ Mobile Apps وـ APIs البسيطة.', tags:['Auth','API','SPA','Tokens'], tutorial:{sections:[]}, qa:[] },
+  { id:'cashier', name:'Laravel Cashier', icon:'💳', theme:'theme-amber', subtitle:'laravel/cashier-stripe', category:'Billing', desc:'مكتبة لإدارة الاشتراكات والمدفوعات عبر Stripe — Subscriptions، Invoices، Webhooks.', tags:['Billing','Stripe','Subscriptions','Payments'], tutorial:{sections:[]}, qa:[] },
+  { id:'horizon', name:'Laravel Horizon', icon:'🔭', theme:'theme-blue', subtitle:'laravel/horizon', category:'Queues', desc:'Dashboard احترافي لمراقبة وإدارة Redis Queues — Jobs، Metrics، Retries.', tags:['Queues','Redis','Monitoring','Jobs'], tutorial:{sections:[]}, qa:[] },
+  { id:'telescope', name:'Laravel Telescope', icon:'🔬', theme:'theme-purple', subtitle:'laravel/telescope', category:'Debugging', desc:'أداة Debugging احترافية — بتسجل كل Requests، Queries، Jobs، Exceptions في Dashboard.', tags:['Debug','Monitoring','Development','Logs'], tutorial:{sections:[]}, qa:[] },
+  { id:'scout', name:'Laravel Scout', icon:'🔍', theme:'theme-blue', subtitle:'laravel/scout', category:'Search', desc:'Full-text Search لـ Eloquent Models — Algolia، Meilisearch، Typesense، Database.', tags:['Search','Algolia','Meilisearch','Fulltext'], tutorial:{sections:[]}, qa:[] },
+  { id:'passport', name:'Laravel Passport', icon:'🛂', theme:'theme-amber', subtitle:'laravel/passport', category:'Authentication', desc:'OAuth2 Server كامل — Authorization Code، Client Credentials، Password Grant.', tags:['OAuth2','Auth','API','Tokens'], tutorial:{sections:[]}, qa:[] },
+  { id:'filament', name:'Laravel Filament', icon:'🔶', theme:'theme-amber', subtitle:'filament/filament', category:'Admin Panel', desc:'Admin Panel كامل فوق Laravel — Resources، Forms، Tables، Widgets بكود بسيط.', tags:['Admin','TALL Stack','UI','Livewire'], tutorial:{sections:[]}, qa:[] },
+  { id:'pulse', name:'Laravel Pulse', icon:'💓', theme:'theme-red', subtitle:'laravel/pulse', category:'Monitoring', desc:'Real-time Performance Dashboard — Server Health، Slow Queries، User Activity.', tags:['Monitoring','Performance','Dashboard','Metrics'], tutorial:{sections:[]}, qa:[] },
+  { id:'reverb', name:'Laravel Reverb', icon:'📡', theme:'theme-purple', subtitle:'laravel/reverb', category:'WebSockets', desc:'WebSocket Server رسمي من Laravel — Real-time Events بدون Pusher.', tags:['WebSockets','Real-time','Broadcasting','Events'], tutorial:{sections:[]}, qa:[] },
+  { id:'octane', name:'Laravel Octane', icon:'🚀', theme:'theme-red', subtitle:'laravel/octane', category:'Performance', desc:'تشغيل Laravel على FrankenPHP أو Swoole أو RoadRunner لأداء خارق السرعة.', tags:['Performance','Speed','Swoole','FrankenPHP'], tutorial:{sections:[]}, qa:[] },
+  { id:'pennant', name:'Laravel Pennant', icon:'🚩', theme:'theme-green', subtitle:'laravel/pennant', category:'Feature Flags', desc:'Feature Flags لـ Laravel — فعّل/عطّل Features بشكل انتقائي لمجموعات مستخدمين.', tags:['Features','Flags','A/B Testing','Rollout'], tutorial:{sections:[]}, qa:[] },
+  { id:'dusk', name:'Laravel Dusk', icon:'🌙', theme:'theme-purple', subtitle:'laravel/dusk', category:'Testing', desc:'Browser Testing — اختبار JavaScript-driven pages بـ Chrome headless.', tags:['Testing','Browser','E2E','Automation'], tutorial:{sections:[]}, qa:[] },
+  { id:'socialite', name:'Laravel Socialite', icon:'🌐', theme:'theme-blue', subtitle:'laravel/socialite', category:'Authentication', desc:'Social Login بـ OAuth — Google، Facebook، GitHub، Twitter والمزيد.', tags:['OAuth','Social','Auth','Login'], tutorial:{sections:[]}, qa:[] },
+  { id:'sail', name:'Laravel Sail', icon:'⛵', theme:'theme-blue', subtitle:'laravel/sail', category:'Development', desc:'Docker Development Environment سهل لـ Laravel — MySQL، Redis، Mailpit وأكتر.', tags:['Docker','Development','Environment','CLI'], tutorial:{sections:[]}, qa:[] },
+  { id:'pint', name:'Laravel Pint', icon:'✨', theme:'theme-green', subtitle:'laravel/pint', category:'Code Quality', desc:'PHP Code Style Fixer تلقائي — يصلح الـ Code Style بأمر واحد.', tags:['Code Style','Linting','Quality','PSR'], tutorial:{sections:[]}, qa:[] },
+  { id:'precognition', name:'Laravel Precognition', icon:'🔮', theme:'theme-purple', subtitle:'laravel/precognition', category:'Forms & Validation', desc:'Real-time Form Validation — اعرض أخطاء الـ Validation قبل الـ Submit.', tags:['Validation','Forms','UX','Real-time'], tutorial:{sections:[]}, qa:[] },
+  { id:'envoy', name:'Laravel Envoy', icon:'📮', theme:'theme-green', subtitle:'laravel/envoy', category:'Deployment', desc:'Task Runner للـ Remote Servers — Deploy، SSH Tasks، Parallel Execution.', tags:['Deployment','SSH','Tasks','Automation'], tutorial:{sections:[]}, qa:[] },
+  { id:'folio', name:'Laravel Folio', icon:'📁', theme:'theme-green', subtitle:'laravel/folio', category:'Routing', desc:'File-based Routing — بدل Route::get() ، كل ملف Blade = Route تلقائي.', tags:['Routing','Blade','Pages','Convention'], tutorial:{sections:[]}, qa:[] },
+  { id:'breeze', name:'Laravel Breeze', icon:'🌬️', theme:'theme-blue', subtitle:'laravel/breeze', category:'Starter Kits', desc:'Starter Kit بسيط للـ Authentication — Login، Register، Password Reset بـ Tailwind.', tags:['Auth','Starter','Tailwind','Scaffolding'], tutorial:{sections:[]}, qa:[] },
+  { id:'fortify', name:'Laravel Fortify', icon:'🏰', theme:'theme-purple', subtitle:'laravel/fortify', category:'Authentication', desc:'Headless Authentication Backend — Authentication Logic بدون UI.', tags:['Auth','Headless','Backend','2FA'], tutorial:{sections:[]}, qa:[] },
+  { id:'jetstream', name:'Laravel Jetstream', icon:'🚀', theme:'theme-blue', subtitle:'laravel/jetstream', category:'Starter Kits', desc:'Starter Kit متقدم — Teams، 2FA، API Tokens، Profile Photo، Sessions.', tags:['Starter','Auth','Teams','2FA'], tutorial:{sections:[]}, qa:[] },
+  { id:'valet', name:'Laravel Valet', icon:'🌿', theme:'theme-green', subtitle:'laravel/valet', category:'Development', desc:'macOS Development Environment خفيف — Sites بدون Docker أو Virtual Machines.', tags:['macOS','Development','Local','Nginx'], tutorial:{sections:[]}, qa:[] },
+];
+
+let currentPkg = null;
+let currentTab = 'tutorial';
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 900) {
+    sidebarOpen = false;
+    document.getElementById('toggle-btn').classList.add('shifted');
+  }
+  buildGrid();
+  setTimeout(() => {
+    document.querySelectorAll('.pkg-progress-fill').forEach(el => {
+      el.style.width = el.dataset.w + '%';
+    });
+  }, 400);
+  window.addEventListener('scroll', updateProgress);
+});
+
+function updateProgress() {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  document.getElementById('prog-bar').style.transform = `scaleX(${pct})`;
+  document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+}
+
+let sidebarOpen = true;
+function toggleSidebar() {
+  const isMobile = window.innerWidth <= 900;
+  sidebarOpen = !sidebarOpen;
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const btn = document.getElementById('toggle-btn');
+  if (isMobile) {
+    sidebar.classList.toggle('mobile-open', sidebarOpen);
+    overlay.classList.toggle('active', sidebarOpen);
+    btn.classList.toggle('shifted', sidebarOpen);
+  } else {
+    sidebar.classList.toggle('collapsed', !sidebarOpen);
+    document.getElementById('main').classList.toggle('expanded', !sidebarOpen);
+    btn.classList.toggle('shifted', !sidebarOpen);
+  }
+}
+
+function filterSidebar() {
+  const q = document.getElementById('sidebar-search').value.toLowerCase();
+  document.querySelectorAll('.nav-item').forEach(el => {
+    el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+function buildGrid() {
+  const grid = document.getElementById('pkg-grid');
+  grid.innerHTML = PACKAGES.map((p,i) => `
+    <div class="pkg-card ${p.theme}" onclick="window.location.href='${p.id}.html'" style="animation-delay:${i*0.04}s">
+      <div class="pkg-header">
+        <div class="pkg-icon">${p.icon}</div>
+        <div>
+          <div class="pkg-title">${p.name}</div>
+          <div class="pkg-subtitle">${p.subtitle}</div>
+        </div>
+      </div>
+      <div class="pkg-desc">${p.desc}</div>
+      <div class="pkg-tags">${p.tags.map(t=>`<span class="pkg-tag">${t}</span>`).join('')}</div>
+      <div class="pkg-footer">
+        <div class="pkg-progress-wrap">
+          <div class="pkg-progress-bar"><div class="pkg-progress-fill" data-w="0" style="width:0"></div></div>
+          <span>0%</span>
+        </div>
+        <button class="pkg-btn">ابدأ ←</button>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('pkg-count').textContent = PACKAGES.length;
+}
+
+// Resize handler
+let lastWindowWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+  const newWidth = window.innerWidth;
+  if (newWidth === lastWindowWidth) return;
+  lastWindowWidth = newWidth;
+  const isMobile = newWidth <= 900;
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  if (!isMobile) {
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('active');
+  } else {
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('active');
+  }
+});
+</script>
+</body>
+</html>

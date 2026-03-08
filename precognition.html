@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laravel Precognition — Laravel Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.nav-pkg-nav { display:flex; justify-content:space-between; padding:16px 60px; background:var(--deep); border-top:1px solid var(--border); }
+.nav-pkg-btn { color:var(--neon); text-decoration:none; font-size:.85rem; font-weight:600; padding:8px 16px; border:1px solid rgba(0,255,135,.2); border-radius:8px; transition:all .2s; }
+.nav-pkg-btn:hover { background:rgba(0,255,135,.1); }
+@media(max-width:600px){ .nav-pkg-nav{ padding:12px 16px; } }
+</style>
+</head>
+<body>
+<div id="prog-bar"></div>
+
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">L</div>
+    <div class="logo-text">Laravel Hub <span>مرجع الـ Packages الشامل</span></div>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="sidebar-search" placeholder="ابحث في الـ Packages..." oninput="filterSidebarNav(this.value)">
+  </div>
+  <div class="sidebar-nav" id="sidebar-nav">
+<div class="nav-section">Authentication</div>
+    <div class="nav-item " id="nav-sanctum" onclick="window.location.href='sanctum.html'">
+      <span class="ni-icon">🔐</span>
+      <span>Laravel Sanctum</span>
+    </div>
+    <div class="nav-item " id="nav-passport" onclick="window.location.href='passport.html'">
+      <span class="ni-icon">🛂</span>
+      <span>Laravel Passport</span>
+    </div>
+    <div class="nav-item " id="nav-socialite" onclick="window.location.href='socialite.html'">
+      <span class="ni-icon">🌐</span>
+      <span>Laravel Socialite</span>
+    </div>
+    <div class="nav-item " id="nav-fortify" onclick="window.location.href='fortify.html'">
+      <span class="ni-icon">🏰</span>
+      <span>Laravel Fortify</span>
+    </div>
+<div class="nav-section">Billing</div>
+    <div class="nav-item " id="nav-cashier" onclick="window.location.href='cashier.html'">
+      <span class="ni-icon">💳</span>
+      <span>Laravel Cashier</span>
+    </div>
+<div class="nav-section">Queues</div>
+    <div class="nav-item " id="nav-horizon" onclick="window.location.href='horizon.html'">
+      <span class="ni-icon">🔭</span>
+      <span>Laravel Horizon</span>
+    </div>
+<div class="nav-section">Debugging</div>
+    <div class="nav-item " id="nav-telescope" onclick="window.location.href='telescope.html'">
+      <span class="ni-icon">🔬</span>
+      <span>Laravel Telescope</span>
+    </div>
+<div class="nav-section">Search</div>
+    <div class="nav-item " id="nav-scout" onclick="window.location.href='scout.html'">
+      <span class="ni-icon">🔍</span>
+      <span>Laravel Scout</span>
+    </div>
+<div class="nav-section">Admin Panel</div>
+    <div class="nav-item " id="nav-filament" onclick="window.location.href='filament.html'">
+      <span class="ni-icon">🔶</span>
+      <span>Laravel Filament</span>
+    </div>
+<div class="nav-section">Monitoring</div>
+    <div class="nav-item " id="nav-pulse" onclick="window.location.href='pulse.html'">
+      <span class="ni-icon">💓</span>
+      <span>Laravel Pulse</span>
+    </div>
+<div class="nav-section">WebSockets</div>
+    <div class="nav-item " id="nav-reverb" onclick="window.location.href='reverb.html'">
+      <span class="ni-icon">📡</span>
+      <span>Laravel Reverb</span>
+    </div>
+<div class="nav-section">Performance</div>
+    <div class="nav-item " id="nav-octane" onclick="window.location.href='octane.html'">
+      <span class="ni-icon">🚀</span>
+      <span>Laravel Octane</span>
+    </div>
+<div class="nav-section">Feature Flags</div>
+    <div class="nav-item " id="nav-pennant" onclick="window.location.href='pennant.html'">
+      <span class="ni-icon">🚩</span>
+      <span>Laravel Pennant</span>
+    </div>
+<div class="nav-section">Testing</div>
+    <div class="nav-item " id="nav-dusk" onclick="window.location.href='dusk.html'">
+      <span class="ni-icon">🌙</span>
+      <span>Laravel Dusk</span>
+    </div>
+<div class="nav-section">Development</div>
+    <div class="nav-item " id="nav-sail" onclick="window.location.href='sail.html'">
+      <span class="ni-icon">⛵</span>
+      <span>Laravel Sail</span>
+    </div>
+    <div class="nav-item " id="nav-valet" onclick="window.location.href='valet.html'">
+      <span class="ni-icon">🌿</span>
+      <span>Laravel Valet</span>
+    </div>
+<div class="nav-section">Code Quality</div>
+    <div class="nav-item " id="nav-pint" onclick="window.location.href='pint.html'">
+      <span class="ni-icon">✨</span>
+      <span>Laravel Pint</span>
+    </div>
+<div class="nav-section">Forms & Validation</div>
+    <div class="nav-item active" id="nav-precognition" onclick="window.location.href='precognition.html'">
+      <span class="ni-icon">🔮</span>
+      <span>Laravel Precognition</span>
+    </div>
+<div class="nav-section">Deployment</div>
+    <div class="nav-item " id="nav-envoy" onclick="window.location.href='envoy.html'">
+      <span class="ni-icon">📮</span>
+      <span>Laravel Envoy</span>
+    </div>
+<div class="nav-section">Routing</div>
+    <div class="nav-item " id="nav-folio" onclick="window.location.href='folio.html'">
+      <span class="ni-icon">📁</span>
+      <span>Laravel Folio</span>
+    </div>
+<div class="nav-section">Starter Kits</div>
+    <div class="nav-item " id="nav-breeze" onclick="window.location.href='breeze.html'">
+      <span class="ni-icon">🌬️</span>
+      <span>Laravel Breeze</span>
+    </div>
+    <div class="nav-item " id="nav-jetstream" onclick="window.location.href='jetstream.html'">
+      <span class="ni-icon">🚀</span>
+      <span>Laravel Jetstream</span>
+    </div>
+
+  </div>
+</nav>
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+<button id="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+<div id="main">
+  <div id="pkg-detail">
+    <div class="detail-header" id="detail-header">
+      <div class="detail-header-bg"></div>
+      <div class="breadcrumb">
+        <a href="index.html">🏠 الرئيسية</a>
+        <span>›</span>
+        <span id="breadcrumb-name"></span>
+      </div>
+      <div class="detail-title-row">
+        <div class="detail-icon theme-purple" id="detail-icon" style="width:54px;height:54px;border-radius:14px;font-size:1.6rem;display:flex;align-items:center;justify-content:center;">🔮</div>
+        <h1 class="detail-h1" id="detail-h1">Laravel Precognition</h1>
+      </div>
+      <p class="detail-tagline" id="detail-tagline">Real-time Form Validation — اعرض أخطاء الـ Validation قبل الـ Submit.</p>
+    </div>
+    <div class="tabs-wrap">
+      <button class="tab-btn active" onclick="switchTab('tutorial')">📖 Tutorial</button>
+      <button class="tab-btn" onclick="switchTab('interview')">💼 أسئلة الانترفيو <span class="tab-count" id="qa-count-badge">0</span></button>
+    </div>
+    <div id="tab-tutorial" class="tab-content active"></div>
+    <div id="tab-interview" class="tab-content"></div>
+    <div class="nav-pkg-nav">
+      <a class="nav-pkg-btn" href="pint.html">← Laravel Pint</a>
+      <a class="nav-pkg-btn" href="envoy.html">Laravel Envoy →</a>
+    </div>
+  </div>
+</div>
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="precognition.js"></script>
+<script src="app.js"></script>
+<script>
+// ---- Page Init ----
+(function() {
+  const pkg = PACKAGES[0];
+  
+  // Setup sidebar toggle
+  let sidebarIsOpen = window.innerWidth > 900;
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const btn = document.getElementById('toggle-btn');
+  const main = document.getElementById('main');
+
+  // Mobile: start collapsed
+  if (window.innerWidth <= 900) {
+    sidebarIsOpen = false;
+    btn.classList.add('shifted');
+    sidebar.classList.add('collapsed');
+    main.classList.add('expanded');
+  }
+
+  window.toggleSidebar = function() {
+    sidebarIsOpen = !sidebarIsOpen;
+    const isMobile = window.innerWidth <= 900;
+    if (isMobile) {
+      sidebar.classList.toggle('mobile-open', sidebarIsOpen);
+      overlay.classList.toggle('active', sidebarIsOpen);
+      btn.classList.toggle('shifted', sidebarIsOpen);
+    } else {
+      sidebar.classList.toggle('collapsed', !sidebarIsOpen);
+      main.classList.toggle('expanded', !sidebarIsOpen);
+      btn.classList.toggle('shifted', !sidebarIsOpen);
+    }
+  };
+
+  window.filterSidebarNav = function(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('.nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  };
+
+  // Breadcrumb
+  document.getElementById('breadcrumb-name').textContent = pkg.name;
+  document.getElementById('qa-count-badge').textContent = pkg.qa ? pkg.qa.length : 0;
+
+  // Build tutorial
+  buildTutorial(pkg);
+  buildInterview(pkg);
+  
+  // Tab switching
+  window.switchTab = function(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      if (b.textContent.includes(tab === 'tutorial' ? 'Tutorial' : 'الانترفيو')) b.classList.add('active');
+    });
+    document.getElementById('tab-' + tab).classList.add('active');
+    window.scrollTo(0,0);
+  };
+
+  // Progress bar
+  window.addEventListener('scroll', function() {
+    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    document.getElementById('prog-bar').style.transform = 'scaleX(' + pct + ')';
+    const bt = document.getElementById('back-top');
+    if(bt) bt.classList.toggle('show', window.scrollY > 400);
+  });
+
+  // Resize
+  window.addEventListener('resize', function() {
+    const isMobile = window.innerWidth <= 900;
+    if (!isMobile) {
+      sidebar.classList.remove('mobile-open');
+      overlay.classList.remove('active');
+    }
+  });
+})();
+</script>
+</body>
+</html>
