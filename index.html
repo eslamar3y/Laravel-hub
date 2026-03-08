@@ -2606,6 +2606,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   buildSidebar();
   buildGrid();
+  const hash = window.location.hash.slice(1);
+  if (hash && PACKAGES.find(p => p.id === hash)) {
+    history.replaceState({ page: 'package', id: hash }, '', '#' + hash);
+    _openPkgInternal(hash);
+  } else {
+    history.replaceState({ page: 'home' }, '', window.location.href);
+  }
+
   // animate progress bars after short delay
   setTimeout(() => {
     document.querySelectorAll('.pkg-progress-fill').forEach(el => {
